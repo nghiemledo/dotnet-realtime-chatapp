@@ -17,7 +17,7 @@ function App() {
             
             // set up handler
             conn.on("ReceiveMessage", (username, msg) => {
-                console.log("msg ", msg);
+                setMessage((messages) => [...messages, {username, msg}])
             })
 
             conn.on("ReceiveSpecificMessage", (username, msg) => {
